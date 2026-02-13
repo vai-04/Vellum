@@ -1,0 +1,133 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-page__background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.login-page__gradient {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    var(--royal-purple) 0%,
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(150px);
+  opacity: 0.1;
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+
+.login-page__container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+}
+
+.login-page__card {
+  border-radius: 24px;
+  padding: 3rem;
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.login-page__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.login-page__logo {
+  font-size: 3rem;
+  color: var(--royal-purple);
+  margin-bottom: 0.5rem;
+  animation: glow-pulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px var(--royal-purple));
+}
+
+.login-page__title {
+  font-size: 2.5rem;
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, 
+    var(--royal-purple), 
+    var(--tyrian-authority)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.login-page__subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.login-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.login-page__submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.login-page__footer {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+}
+
+.login-page__hint {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.login-page__back {
+  display: block;
+  margin: 2rem auto 0;
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.login-page__back:hover {
+  color: var(--royal-purple);
+  transform: translateX(-4px);
+}
+
+@media (max-width: 600px) {
+  .login-page__card {
+    padding: 2rem;
+  }
+
+  .login-page__title {
+    font-size: 2rem;
+  }
+}

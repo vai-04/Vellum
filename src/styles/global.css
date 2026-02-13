@@ -1,0 +1,201 @@
+/* Global Styles for Vellum Decision Intelligence Archive */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Deep Jewel Anchors */
+  --royal-purple: #6B46C1;
+  --wine-obsidian: #4A1942;
+  --imperial-jade: #1B5E4F;
+  --tyrian-authority: #66023C;
+  
+  /* Interaction Palette */
+  --lavender-frost: #C4B5FD;
+  --arctic-blue-frost: #BFDBFE;
+  --mint-cognition: #A7F3D0;
+  --champagne-glass: #FEF3C7;
+  --rose-quartz: #FBCFE8;
+  --glacier-silver: #E5E7EB;
+  
+  /* Luxury Frost Variants */
+  --jade-frost: #6EE7B7;
+  --wine-frost: #F9A8D4;
+  --sapphire-mist: #93C5FD;
+  --tyrian-frost: #E879F9;
+  
+  /* Light Theme */
+  --bg-primary-light: #FAFAFA;
+  --bg-secondary-light: #FFFFFF;
+  --text-primary-light: #1F2937;
+  --text-secondary-light: #6B7280;
+  --glass-light: rgba(255, 255, 255, 0.7);
+  --glass-border-light: rgba(255, 255, 255, 0.9);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  
+  /* Dark Theme */
+  --bg-primary-dark: #0A0A0F;
+  --bg-secondary-dark: #13131A;
+  --text-primary-dark: #F9FAFB;
+  --text-secondary-dark: #9CA3AF;
+  --glass-dark: rgba(20, 20, 30, 0.6);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] {
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --glass-bg: var(--glass-light);
+  --glass-border: var(--glass-border-light);
+  --shadow: var(--shadow-light);
+}
+
+[data-theme="dark"] {
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --glass-bg: var(--glass-dark);
+  --glass-border: var(--glass-border-dark);
+  --shadow: var(--shadow-dark);
+}
+
+body {
+  font-family: 'Literata', 'Crimson Pro', 'Cormorant Garamond', serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Glass Morphism Base Classes */
+.glass-surface {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 
+    0 8px 32px 0 var(--shadow),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 48px 0 var(--shadow),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15),
+    0 0 24px 0 rgba(107, 70, 193, 0.2);
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--royal-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lavender-frost);
+}
+
+/* Selection */
+::selection {
+  background: var(--lavender-frost);
+  color: var(--wine-obsidian);
+}
+
+/* Focus States */
+*:focus-visible {
+  outline: 2px solid var(--royal-purple);
+  outline-offset: 2px;
+}
+
+/* Animation Keyframes */
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shine-sweep {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(200%) rotate(45deg);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utility Classes */
+.fade-in {
+  animation: fade-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.cinematic-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.display-text {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 200;
+  letter-spacing: 0.02em;
+}
